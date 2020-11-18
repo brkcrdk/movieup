@@ -1,0 +1,25 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    "@babel/plugin-proposal-export-default-from",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~": "./"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": false, "minify": true, "pure": true }
+        ]
+      ]
+    }
+  }
+}
