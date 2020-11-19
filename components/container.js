@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '~/theme';
 
 const Container = ({ children }) => {
-  return <StyledContainer>{children}</StyledContainer>;
+  return <StyledContainer className="container">{children}</StyledContainer>;
 };
 
 export default Container;
