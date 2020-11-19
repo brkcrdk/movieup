@@ -20,8 +20,8 @@ export default SliderCard;
 const StyledSliderCard = styled.article`
   background-color: #fafafa;
   display: flex;
-  width: 942px;
-  margin: 100px 0;
+  /* width: 926px; */
+  margin: 100px auto;
   padding: 44px 22px 44px 50px;
   border-radius: 10px;
   img {

@@ -19,8 +19,6 @@ const StyledMiddle = styled.section`
   span,
   h4 {
     font-weight: 600;
-    margin: 0;
-    padding: 0;
   }
   span {
     font-size: 18px;

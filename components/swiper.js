@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, A11y } from 'swiper';
+import SwiperCore, { Autoplay, A11y, EffectCoverflow } from 'swiper';
 
 const Slider = ({
   settings,
@@ -8,7 +8,7 @@ const Slider = ({
   interleaveEffect = false,
   children = [],
 }) => {
-  SwiperCore.use([Autoplay, A11y]);
+  SwiperCore.use([Autoplay, A11y, EffectCoverflow]);
   const params = {
     slidesPerView: 1,
     speed: 750,
