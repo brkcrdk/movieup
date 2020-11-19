@@ -1,13 +1,18 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import { device } from '~/theme';
 
 const Logo = () => {
   return (
-    <StyledLogo
-      src="/static/images/logo.png"
-      alt="movieup-logo"
-      title="MovieUp"
-    />
+    <Link href="/">
+      <a>
+        <StyledLogo
+          src="/static/images/logo.png"
+          alt="movieup-logo"
+          title="MovieUp"
+        />
+      </a>
+    </Link>
   );
 };
 
