@@ -9,16 +9,18 @@ const Banner = () => {
       <Container>
         <Content>
           <img src="/static/images/circles.png" />
-          <h1>
-            Welcome to
-            <br />
-            <strong>MovieUP</strong>
-          </h1>
-          <h5>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris
-          </h5>
+          <hgroup>
+            <h1>
+              Welcome to
+              <br />
+              <strong>MovieUP</strong>
+            </h1>
+            <h5>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </h5>
+          </hgroup>
         </Content>
       </Container>
       <Shadow />
