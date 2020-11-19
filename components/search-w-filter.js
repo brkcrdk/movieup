@@ -55,15 +55,18 @@ const Filters = styled.div`
 `;
 
 const SearchBtn = styled.button`
+  display: flex;
+  align-items: center;
   color: #fff;
   margin-left: 20px;
   width: 180px;
-  border: none;
   background: ${color.yellow};
   padding: 19px 35px 19px 30px;
   border-radius: 8px;
   i {
     color: #fff;
+    margin-left: 20px;
+    font-size: 20px;
   }
   @media ${device.tablet} {
     margin-top: 20px;

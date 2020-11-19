@@ -14,4 +14,5 @@ const StyledGenre = styled.span`
   border-radius: 8px;
   background-color: ${color.yellow};
   padding: 11px 24px;
+  text-align: center;
 `;

@@ -27,8 +27,6 @@ const StyledSearchBox = styled.div`
   }
   input {
     width: 100%;
-    outline: none;
-    border: none;
     background: transparent;
     color: ${color.inputTexts};
     margin-right: 5px;
