@@ -21,10 +21,7 @@ const Hamburger = () => {
 export default Hamburger;
 
 const StyledHamburger = styled.button`
-  border: none;
   background: none;
-  outline: none;
-  cursor: pointer;
   position: relative;
   margin-bottom: 15px;
   margin-right: 20px;
