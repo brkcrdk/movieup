@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Navigation from '~/components/navigation';
+import Navigation from './navigation';
 import SearchBox from '~/components/search-box';
 import { device } from '~/theme';
 

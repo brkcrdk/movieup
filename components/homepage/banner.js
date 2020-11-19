@@ -36,10 +36,11 @@ const StyledBanner = styled.section`
   position: relative;
   width: 100%;
   height: 75vh;
+  min-height: 690px;
 `;
 
 const Content = styled.div`
-  z-index: 9;
+  z-index: 1;
   margin-top: 127px;
   color: #fff;
   position: relative;
@@ -50,6 +51,14 @@ const Content = styled.div`
     font-weight: 500;
     font-size: 65px;
     line-height: 84px;
+    @media ${device.phone} {
+      font-size: 50px;
+      line-height: 74px;
+    }
+    @media ${device.mini} {
+      font-size: 45px;
+      line-height: 64px;
+    }
   }
   h5 {
     font-weight: normal;
