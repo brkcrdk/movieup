@@ -54,5 +54,10 @@ const Header = styled.h1`
   }
   @media ${device.tablet} {
     font-size: 35px;
+    margin: 35px 0;
+  }
+  @media ${device.phone} {
+    margin: 15px 0;
+    font-size: 20px;
   }
 `;
