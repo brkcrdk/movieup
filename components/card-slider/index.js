@@ -6,12 +6,12 @@ import Slider from './slider';
 
 import { color, device } from '~/theme';
 
-const CardSlider = () => {
+const CardSlider = ({ title = 'Slider Title' }) => {
   return (
     <StyledCardSlider>
       <Container>
         <Header>
-          <h4>Popular Movies</h4>
+          <h4>{title}</h4>
           <Link href="/">
             <a>
               View more

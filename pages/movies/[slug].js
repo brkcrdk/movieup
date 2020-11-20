@@ -8,7 +8,7 @@ const Detail = () => {
     <Layout>
       <Breadcrumb />
       <DetailCard />
-      <CardSlider />
+      <CardSlider title="Related Movies" />
     </Layout>
   );
 };

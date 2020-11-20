@@ -7,7 +7,7 @@ const Home = () => {
     <Layout>
       <Banner />
       <SearchWFilter homepage />
-      <CardSlider />
+      <CardSlider title="Popular Videos" />
     </Layout>
   );
 };

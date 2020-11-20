@@ -67,5 +67,6 @@ const StyledSelectbox = styled.div`
     transform: translateY(-50%);
     color: ${color.yellow};
     font-size: 20px;
+    pointer-events: none;
   }
 `;
