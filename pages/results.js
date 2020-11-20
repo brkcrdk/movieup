@@ -1,17 +1,34 @@
+import { useRouter } from 'next/router';
+
 import Layout from '~/layout';
 import Breadcrumb from '~/components/breadcrumb';
 import SearchWFilter from '~/components/search-w-filter';
 import MovieList from '~/components/movie-list';
-import { useRouter } from 'next/router';
-const Movies = ({ data, route }) => {
-  const { query } = useRouter();
-  console.log({ data, route });
+
+const Movies = ({ data }) => {
+  const { query, push } = useRouter();
+
+  console.log(data);
+
+  const handlePagination = (e) => {
+    push({
+      pathname: '/results',
+      query: { ...query, page: e.selected + 1 },
+    });
+    setTimeout(() => {
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }, 500);
+  };
 
   return (
     <Layout>
       <Breadcrumb />
       <SearchWFilter />
-      <MovieList title={query.name} movies={data} />
+      <MovieList
+        title={query.name}
+        movies={data}
+        pageChange={handlePagination}
+      />
     </Layout>
   );
 };

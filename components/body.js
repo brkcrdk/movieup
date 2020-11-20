@@ -1,26 +1,22 @@
+/* eslint-disable max-len */
 import styled from 'styled-components';
 import { color, device, clampText } from '~/theme';
-const Body = ({ clampBody }) => {
+
+// NOTE: Test etmek amaçlı var
+const dummyText =
+  'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son. The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.';
+
+const Body = ({
+  clampBody,
+  year = '2019',
+  title = 'The Godfather',
+  body = dummyText,
+}) => {
   return (
     <StyledBody className="body" clampBody={clampBody}>
-      <span>2019</span>
-      <h4>The Godfather</h4>
-      <p>
-        The aging patriarch of an organized crime dynasty transfers control of
-        his clandestine empire to his reluctant son. The aging patriarch of an
-        organized crime dynasty transfers control of his clandestine empire to
-        his reluctant son. The aging patriarch of an organized crime dynasty
-        transfers control of his clandestine empire to his reluctant son. The
-        aging patriarch of an organized crime dynasty transfers control of his
-        clandestine empire to his reluctant son. The aging patriarch of an
-        organized crime dynasty transfers control of his clandestine empire to
-        his reluctant son. The aging patriarch of an organized crime dynasty
-        transfers control of his clandestine empire to his reluctant son. The
-        aging patriarch of an organized crime dynasty transfers control of his
-        clandestine empire to his reluctant son. The aging patriarch of an
-        organized crime dynasty transfers control of his clandestine empire to
-        his reluctant son.
-      </p>
+      <span>{year}</span>
+      <h4>{title}</h4>
+      <p>{body}</p>
     </StyledBody>
   );
 };

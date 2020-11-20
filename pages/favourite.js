@@ -6,7 +6,7 @@ const Favourite = () => {
   return (
     <Layout>
       <Breadcrumb />
-      <MovieList />
+      <MovieList title="Favourites" />
     </Layout>
   );
 };
