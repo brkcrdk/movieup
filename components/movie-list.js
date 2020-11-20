@@ -7,21 +7,23 @@ import Paginate from '~/components/paginate';
 import { device, color } from '~/theme';
 
 const MovieList = ({ title = '', movies = {} }) => {
-  const { Response, Search, Error } = movies;
+  const { Search, Error, totalResults } = movies;
+
   if (Error) {
     return <ErrorText>{Error}</ErrorText>;
   }
+
   return (
     <Container>
       <Header>
         Search result <span>{title}</span>
       </Header>
       <StyledMovieList>
-        {Search.map((movie, index) => (
-          <ListCard />
+        {Search.map(({ imdbId }, index) => (
+          <ListCard key={index} />
         ))}
       </StyledMovieList>
-      <Paginate />
+      <Paginate pageCount={totalResults && totalResults / 10} />
     </Container>
   );
 };
