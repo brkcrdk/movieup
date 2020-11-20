@@ -6,19 +6,20 @@ import Paginate from '~/components/paginate';
 
 import { device, color } from '~/theme';
 
-const MovieList = () => {
+const MovieList = ({ title = '', movies = {} }) => {
+  const { Response, Search, Error } = movies;
+  if (Error) {
+    return <ErrorText>{Error}</ErrorText>;
+  }
   return (
     <Container>
       <Header>
-        Search result <span>Godfather</span>
+        Search result <span>{title}</span>
       </Header>
       <StyledMovieList>
-        <ListCard />
-        <ListCard />
-        <ListCard />
-        <ListCard />
-        <ListCard />
-        <ListCard />
+        {Search.map((movie, index) => (
+          <ListCard />
+        ))}
       </StyledMovieList>
       <Paginate />
     </Container>
@@ -60,4 +61,10 @@ const Header = styled.h1`
     margin: 15px 0;
     font-size: 20px;
   }
+`;
+
+const ErrorText = styled.h1`
+  text-align: center;
+  margin-top: 100px;
+  color: ${color.yellow};
 `;

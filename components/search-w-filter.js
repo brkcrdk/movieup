@@ -21,11 +21,22 @@ const SearchWFilter = ({ homepage }) => {
   const [type, setType] = useState();
   const [name, setName] = useState('');
 
-  const handleYear = ({ value }) => {
-    setYear(value);
+  const handleYear = (e) => {
+    // NOTE: React select' in clearable özelliği ile seçilmiş olan option kaldırılırsa
+    // event null dönüyor. Bu nedenle eğer event null dönerse statei sıfırla eğer event
+    // bir değer dönüyorsa statei güncelle
+    if (e) {
+      return setYear(e.value);
+    } else {
+      return setYear();
+    }
   };
-  const handleType = ({ value }) => {
-    setType(value);
+  const handleType = (e) => {
+    if (e) {
+      return setType(e.value);
+    } else {
+      return setType();
+    }
   };
   const handleName = ({ target: { value } }) => {
     setName(value);

@@ -27,12 +27,17 @@ const Selectbox = ({ placeholder = '', options = [], onChange }) => {
       overflow: 'hidden',
       textTransform: 'capitalize',
     }),
+    clearIndicator: (defaultStyles) => ({
+      ...defaultStyles,
+      right: 46,
+    }),
   };
 
   return (
     <StyledSelectbox>
       <Select
         styles={customStyle}
+        isClearable
         options={options}
         onChange={onChange}
         placeholder={placeholder}
@@ -63,7 +68,7 @@ const StyledSelectbox = styled.div`
   i {
     position: absolute;
     top: 50%;
-    right: 26px;
+    right: 10px;
     transform: translateY(-50%);
     color: ${color.yellow};
     font-size: 20px;
