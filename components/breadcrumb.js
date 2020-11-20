@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Container from '~/components/container';
 import { color } from '~/theme';
 
 const Breadcrumb = () => {
+  const { asPath } = useRouter();
+  console.log(asPath.split('/'));
   return (
     <StyledBreadcrumb>
       <Container>
         <Link href="/">
-          <a>Home /</a>
+          <a>Home / </a>
         </Link>
-        <Link href="/">
-          <a>Search Result</a>
-        </Link>
+        <span>{asPath.split('/')[1]}</span>
       </Container>
     </StyledBreadcrumb>
   );
@@ -24,14 +25,19 @@ const StyledBreadcrumb = styled.div`
   background: ${color.breadcrumbBackground};
   padding: 24px 0;
   align-items: center;
-  a {
+  a,
+  span {
     margin: 0 5px;
     font-size: 18px;
     font-weight: 600;
     line-height: 30px;
-    &:hover {
-      color: ${color.yellow};
-    }
+    text-transform: capitalize;
+  }
+  a:hover {
+    color: ${color.yellow};
+  }
+  span:hover {
+    cursor: context-menu;
   }
 
   .container {
