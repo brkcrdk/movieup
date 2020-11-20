@@ -5,15 +5,14 @@ import Container from '~/components/container';
 import { color } from '~/theme';
 
 const Breadcrumb = () => {
-  const { asPath } = useRouter();
-  console.log(asPath.split('/'));
+  const { route } = useRouter();
   return (
     <StyledBreadcrumb>
       <Container>
         <Link href="/">
           <a>Home / </a>
         </Link>
-        <span>{asPath.split('/')[1]}</span>
+        <span>{route.split('/')[1]}</span>
       </Container>
     </StyledBreadcrumb>
   );
