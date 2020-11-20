@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Rating = () => {
   return (
     <StyledRating className="rating">
-      <img src="static/images/imdb.png" />
+      <img src="/static/images/imdb.png" />
       <span>8.8</span>
     </StyledRating>
   );
