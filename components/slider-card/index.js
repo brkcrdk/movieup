@@ -10,7 +10,7 @@ const SliderCard = () => {
       <img src="/static/images/placeholder.png" />
       <Content>
         <Top />
-        <Body />
+        <Body clampBody={3} />
         <Bottom />
       </Content>
     </StyledSliderCard>

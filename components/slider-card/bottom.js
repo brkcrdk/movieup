@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-
+import AddToFav from '~/components/add-to-fav';
 import { color, device } from '~/theme';
 
 const Bottom = () => {
   return (
     <StyledBottom>
-      <button>
-        <i className="icon-heart" />
-        Add to favourites
-      </button>
+      <AddToFav />
       <Link href="/">
         <a>View Details</a>
       </Link>
@@ -27,22 +24,6 @@ const StyledBottom = styled.footer`
   }
   @media ${device.tablet} {
     flex-direction: column-reverse;
-  }
-  button {
-    border-radius: 8px;
-    background: ${color.yellow};
-    padding: 20px 15px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    i {
-      font-size: 30px;
-      margin-right: 8px;
-    }
-    @media (max-width: 1550px) {
-      padding: 15px 10px;
-    }
   }
   a {
     color: ${color.yellow};

@@ -1,13 +1,25 @@
 import styled from 'styled-components';
-import { color, device } from '~/theme';
-const Body = () => {
+import { color, device, clampText } from '~/theme';
+const Body = ({ clampBody }) => {
   return (
-    <StyledBody className="body">
+    <StyledBody className="body" clampBody={clampBody}>
       <span>2019</span>
       <h4>The Godfather</h4>
       <p>
         The aging patriarch of an organized crime dynasty transfers control of
-        his clandestine empire to his reluctant son.
+        his clandestine empire to his reluctant son. The aging patriarch of an
+        organized crime dynasty transfers control of his clandestine empire to
+        his reluctant son. The aging patriarch of an organized crime dynasty
+        transfers control of his clandestine empire to his reluctant son. The
+        aging patriarch of an organized crime dynasty transfers control of his
+        clandestine empire to his reluctant son. The aging patriarch of an
+        organized crime dynasty transfers control of his clandestine empire to
+        his reluctant son. The aging patriarch of an organized crime dynasty
+        transfers control of his clandestine empire to his reluctant son. The
+        aging patriarch of an organized crime dynasty transfers control of his
+        clandestine empire to his reluctant son. The aging patriarch of an
+        organized crime dynasty transfers control of his clandestine empire to
+        his reluctant son.
       </p>
     </StyledBody>
   );
@@ -39,6 +51,7 @@ const StyledBody = styled.section`
   h4 {
     font-size: 30px;
     line-height: 30px;
+
     @media (max-width: 1550px) {
       font-size: 25px;
     }
@@ -50,6 +63,9 @@ const StyledBody = styled.section`
     line-height: 35px;
     font-weight: 400;
     color: ${color.contentTexts};
+
+    ${(p) => p.clampBody && clampText(p.clampBody)};
+
     @media (max-width: 1550px) {
       margin-top: 10px;
       font-size: 14px;

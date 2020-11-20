@@ -21,3 +21,11 @@ export const device = Object.keys(size).reduce((acc, cur) => {
   acc[cur] = `(max-width: ${size[cur] - 1}px)`;
   return acc;
 }, {});
+
+export const clampText = (lineCount = 2) => {
+  return `display: -webkit-box;
+  -webkit-line-clamp:${lineCount};
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;`;
+};
