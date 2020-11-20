@@ -9,6 +9,7 @@ import { useSwiper } from '~/hooks';
 const Slider = () => {
   const [slider, setSlider] = useState();
   const { active, slideNext, slidePrev } = useSwiper(slider);
+  const data = [...Array(5).keys()];
 
   const swiperSettings = {
     slidesPerView: 1,
@@ -29,10 +30,9 @@ const Slider = () => {
         </NavigationBtn>
       </ShadowLeft>
       <Swiper settings={swiperSettings} setSlider={setSlider}>
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
+        {data.map((item) => (
+          <SliderCard key={item} />
+        ))}
       </Swiper>
       <ShadowRight>
         <NavigationBtn type="button" onClick={slideNext}>
@@ -40,8 +40,8 @@ const Slider = () => {
         </NavigationBtn>
       </ShadowRight>
       <Dots>
-        {[...Array(4).keys()].map((item) => (
-          <span key={item} className={item === active && 'active'} />
+        {data.map((item) => (
+          <span key={item} className={item === active ? 'active' : ''} />
         ))}
       </Dots>
     </StyledSlider>
