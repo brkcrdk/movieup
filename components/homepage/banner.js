@@ -37,8 +37,8 @@ const StyledBanner = styled.section`
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 75vh;
-  min-height: 690px;
+  /* height: 75vh; */
+  height: 690px;
 `;
 
 const Content = styled.div`
