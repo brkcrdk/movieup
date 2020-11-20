@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import { color, device } from '~/theme';
 
-const Paginate = ({ pageCount }) => {
-  const { push, query } = useRouter();
+const Paginate = ({ pageCount, pageChange }) => {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -22,12 +20,7 @@ const Paginate = ({ pageCount }) => {
   return (
     <StyledPaginate>
       <ReactPaginate
-        onPageChange={(e) => {
-          push({
-            pathname: '/results',
-            query: { ...query, page: e.selected + 1 },
-          });
-        }}
+        onPageChange={pageChange}
         pageCount={pageCount}
         pageRangeDisplayed={displayed}
         marginPagesDisplayed={displayed}

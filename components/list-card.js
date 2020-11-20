@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import Rating from '~/components/rating';
 import Body from '~/components/body';
-const ListCard = () => {
+const ListCard = ({ poster, title, year }) => {
+  // TODO: Route to detail link
   return (
     <StyledListCard>
-      <CardImage src="/static/images/placeholder.png" />
+      <CardImage src={poster} />
       <Content>
         <Rating />
-        <Body clampBody={4} />
+        <Body clampBody={4} title={title} year={year} />
       </Content>
     </StyledListCard>
   );

@@ -6,7 +6,7 @@ import Paginate from '~/components/paginate';
 
 import { device, color } from '~/theme';
 
-const MovieList = ({ title = '', movies = {} }) => {
+const MovieList = ({ title = '', movies = {}, pageChange }) => {
   const { Search, Error, totalResults } = movies;
 
   if (Error) {
@@ -15,15 +15,30 @@ const MovieList = ({ title = '', movies = {} }) => {
 
   return (
     <Container>
-      <Header>
-        Search result <span>{title}</span>
-      </Header>
+      {Search ? (
+        <Header>
+          Search result <span>{title}</span>
+        </Header>
+      ) : (
+        <Header>{title}</Header>
+      )}
       <StyledMovieList>
-        {Search.map(({ imdbId }, index) => (
-          <ListCard key={index} />
+        {Search?.map(({ imdbId, Title, Year, Poster }, index) => (
+          <ListCard
+            key={index}
+            title={Title}
+            year={Year}
+            poster={Poster}
+            imdbId={imdbId}
+          />
         ))}
       </StyledMovieList>
-      <Paginate pageCount={totalResults && totalResults / 10} />
+      {totalResults && (
+        <Paginate
+          pageCount={totalResults && totalResults / 10}
+          pageChange={pageChange}
+        />
+      )}
     </Container>
   );
 };
