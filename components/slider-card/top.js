@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
 import Genre from '~/components/genre';
+import Rating from '~/components/rating';
 import { device } from '~/theme';
 
 const Top = () => {
   return (
     <StyledTop>
-      <Rating>
-        <img src="static/images/imdb.png" />
-        <span>8.8</span>
-      </Rating>
+      <Rating />
       <Genres>
         <Genre genre="Action" />
         <Genre genre="Biography" />
@@ -37,22 +35,15 @@ const StyledTop = styled.header`
   }
 `;
 
-const Rating = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 27px;
-  width: 100px;
-`;
-
 const Genres = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 20px;
+  @media (max-width: 1550px) {
+    margin-top: 20px;
+  }
   .genre {
-    margin: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
   }
 `;

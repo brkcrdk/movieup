@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { color, device } from '~/theme';
-const Middle = () => {
+const Body = () => {
   return (
-    <StyledMiddle>
+    <StyledBody className="body">
       <span>2019</span>
       <h4>The Godfather</h4>
       <p>
         The aging patriarch of an organized crime dynasty transfers control of
         his clandestine empire to his reluctant son.
       </p>
-    </StyledMiddle>
+    </StyledBody>
   );
 };
 
-export default Middle;
+export default Body;
 
-const StyledMiddle = styled.section`
+const StyledBody = styled.section`
   @media (max-width: 1550px) {
     margin-top: 15px;
   }

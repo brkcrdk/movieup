@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Top from './top';
-import Middle from './middle';
 import Bottom from './bottom';
+import Body from '~/components/body';
 import { device } from '~/theme';
 
 const SliderCard = () => {
@@ -10,7 +10,7 @@ const SliderCard = () => {
       <img src="/static/images/placeholder.png" />
       <Content>
         <Top />
-        <Middle />
+        <Body />
         <Bottom />
       </Content>
     </StyledSliderCard>
