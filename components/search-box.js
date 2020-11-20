@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { color } from '~/theme';
 import { device } from '~/theme';
 
-const SearchBox = ({ inHeader = false }) => {
+const SearchBox = ({ inHeader = false, onChange }) => {
   return (
     <StyledSearchBox inHeader={inHeader}>
-      <input placeholder="Enter movie name here" />
+      <input placeholder="Enter movie name here" onChange={onChange} />
       <i className="icon-search" />
     </StyledSearchBox>
   );

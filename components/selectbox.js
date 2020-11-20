@@ -2,43 +2,40 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import { color, device } from '~/theme';
 
-const Selectbox = () => {
-  const options = [
-    {
-      value: 1,
-      label: 'bir',
-    },
-    {
-      value: 2,
-      label: 'iki',
-    },
-  ];
+const Selectbox = ({ placeholder = '', options = [], onChange }) => {
+  const customStyle = {
+    indicatorSeparator: () => {},
+    dropdownIndicator: (defaultStyles) => ({
+      ...defaultStyles,
+      '& svg': { display: 'none' },
+    }),
+    control: (defaultStyles) => ({
+      ...defaultStyles,
+      border: '0',
+      boxShadow: 'none',
+      background: color.inputBackground,
+      fontSize: '18px',
+      textTransform: 'capitalize',
+    }),
+    valueContainer: (defaultStyles) => ({
+      ...defaultStyles,
+      padding: '20px',
+    }),
+    menu: (defaultStyles) => ({
+      ...defaultStyles,
+      maxHeight: 250,
+      overflow: 'hidden',
+      textTransform: 'capitalize',
+    }),
+  };
 
-  const customStyle = {};
   return (
     <StyledSelectbox>
       <Select
-        styles={{
-          indicatorSeparator: () => {},
-          dropdownIndicator: (defaultStyles) => ({
-            ...defaultStyles,
-            '& svg': { display: 'none' },
-          }),
-          control: (defaultStyles) => ({
-            ...defaultStyles,
-            border: '0',
-            boxShadow: 'none',
-            background: color.inputBackground,
-            fontSize: '18px',
-            textTransform: 'capitalize',
-          }),
-          valueContainer: (defaultStyles) => ({
-            ...defaultStyles,
-            padding: '20px',
-          }),
-        }}
+        styles={customStyle}
         options={options}
-        placeholder="Year"
+        onChange={onChange}
+        placeholder={placeholder}
         theme={(theme) => ({
           ...theme,
           borderRadius: '8px',

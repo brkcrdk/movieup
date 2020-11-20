@@ -1,23 +1,55 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import Container from '~/components/container';
 import Selectbox from '~/components/selectbox';
 import SearchBox from '~/components/search-box';
 import { color, device } from '~/theme';
 
+const types = ['movie', 'series', 'episode'].map((type) => ({
+  value: type,
+  label: type,
+}));
+const years = [...Array(2022).keys()]
+  .filter((number) => number >= 1950)
+  .map((number) => ({ value: number, label: number }))
+  .reverse();
+
 const SearchWFilter = ({ homepage }) => {
+  const [year, setYear] = useState();
+  const [type, setType] = useState();
+  const [name, setName] = useState('');
+
+  const handleYear = ({ value }) => {
+    setYear(value);
+  };
+  const handleType = ({ value }) => {
+    setType(value);
+  };
+  const handleName = ({ target: { value } }) => {
+    setName(value);
+  };
+
   return (
     <Container>
       <StyledSearchWFilter homepage={homepage}>
         <Filters>
-          <Selectbox />
-          <Selectbox />
+          <Selectbox placeholder="Year" options={years} onChange={handleYear} />
+          <Selectbox placeholder="Type" options={types} onChange={handleType} />
         </Filters>
-        <SearchBox />
-        <SearchBtn>
-          Search
-          <i className="icon-arrow-right" />
-        </SearchBtn>
+        <SearchBox onChange={handleName} />
+        <Link
+          href={{
+            pathname: '/results',
+            query: { ...(year && { year }), ...(type && { type }), name },
+          }}
+        >
+          <SearchBtn>
+            Search
+            <i className="icon-arrow-right" />
+          </SearchBtn>
+        </Link>
       </StyledSearchWFilter>
     </Container>
   );
