@@ -9,19 +9,20 @@ const Paginate = () => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
-    console.log(width);
     window.addEventListener('resize', handleResize);
     return () => {
       window.addEventListener('resize', handleResize);
     };
   }, [width]);
 
+  const displayed = width > 768 ? 2 : width > 601 ? 1 : 0;
+
   return (
     <StyledPaginate>
       <ReactPaginate
         pageCount={15}
-        pageRangeDisplayed={width > 602 ? 2 : 0}
-        marginPagesDisplayed={width > 602 ? 2 : 0}
+        pageRangeDisplayed={displayed}
+        marginPagesDisplayed={displayed}
       />
     </StyledPaginate>
   );
