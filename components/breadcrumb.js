@@ -36,5 +36,7 @@ const StyledBreadcrumb = styled.div`
 
   .container {
     display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { color } from '~/theme';
 
 const Genre = ({ genre }) => {
-  return <StyledGenre className="genre-pill">{genre}</StyledGenre>;
+  return <StyledGenre className="genre">{genre}</StyledGenre>;
 };
 
 export default Genre;

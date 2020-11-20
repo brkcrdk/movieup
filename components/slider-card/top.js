@@ -52,7 +52,7 @@ const Genres = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 20px;
-  .genre-pill {
+  .genre {
     margin: 5px;
   }
 `;

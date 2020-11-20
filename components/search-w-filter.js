@@ -26,7 +26,7 @@ const SearchWFilter = ({ homepage }) => {
 export default SearchWFilter;
 
 const StyledSearchWFilter = styled.div`
-  margin-top: ${(p) => p.homepage && '-80px'};
+  margin-top: ${(p) => (p.homepage ? '-80px' : '35px')};
   padding: 30px;
   z-index: 1;
   background: #fff;
