@@ -57,6 +57,7 @@ const Filters = styled.div`
 const SearchBtn = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #fff;
   margin-left: 20px;
   width: 180px;
