@@ -2,7 +2,7 @@ import Layout from '~/layout';
 import MovieList from '~/components/movie-list';
 import Breadcrumb from '~/components/breadcrumb';
 
-const Favourites = () => {
+const Favourite = () => {
   return (
     <Layout>
       <Breadcrumb />
@@ -11,4 +11,4 @@ const Favourites = () => {
   );
 };
 
-export default Favourites;
+export default Favourite;

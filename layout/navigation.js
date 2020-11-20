@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { color, device } from '~/theme';
 
 const Navigation = () => {
+  const { route } = useRouter();
+  const paths = [
+    { href: '/', title: 'Home' },
+    { href: '/favourite', title: 'Favourite' },
+  ];
   return (
     <StyledNavigation>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <Link href="/favourite">
-        <a className="active">Favourite</a>
-      </Link>
+      {paths.map(({ href, title }) => (
+        <Link key={title} href={href}>
+          <a className={route === href ? 'active' : ''}>{title}</a>
+        </Link>
+      ))}
     </StyledNavigation>
   );
 };
