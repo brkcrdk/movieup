@@ -7,7 +7,7 @@ const ListCard = () => {
       <CardImage src="/static/images/placeholder.png" />
       <Content>
         <Rating />
-        <Body />
+        <Body clampBody={4} />
       </Content>
     </StyledListCard>
   );

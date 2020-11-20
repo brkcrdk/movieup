@@ -12,4 +12,21 @@ const Movies = () => {
   );
 };
 
+export async function getServerSideProps({ query }) {
+  const res = await fetch(
+    `http://www.omdbapi.com/?apikey=${process.env.API_KEY}&s=${query.t}&page=2`
+  );
+  const data = await res.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
 export default Movies;
