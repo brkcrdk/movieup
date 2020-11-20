@@ -45,7 +45,7 @@ const SearchWFilter = ({ homepage }) => {
             query: { ...(year && { year }), ...(type && { type }), name },
           }}
         >
-          <SearchBtn>
+          <SearchBtn disabled={!name}>
             Search
             <i className="icon-arrow-right" />
           </SearchBtn>
@@ -100,6 +100,10 @@ const SearchBtn = styled.button`
     color: #fff;
     margin-left: 20px;
     font-size: 20px;
+  }
+  &:disabled {
+    background: ${color.disabledButton};
+    cursor: context-menu;
   }
   @media ${device.tablet} {
     margin-top: 20px;
