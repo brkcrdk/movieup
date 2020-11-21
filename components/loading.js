@@ -2,8 +2,8 @@ const Loading = () => {
   return (
     <div
       style={{
-        width: '100vw',
-        height: '100vh',
+        width: '100%',
+        height: '96vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
