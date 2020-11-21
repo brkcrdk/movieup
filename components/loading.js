@@ -1,31 +1,12 @@
-import Layout from '~/layout';
-import styled from 'styled-components';
-import { color, device } from '~/theme';
-
 const Loading = () => {
   return (
-    <Layout>
-      <StyledLoading>
-        <Text>Loading.. Please wait.</Text>
-      </StyledLoading>
-    </Layout>
+    <div style={{ width: '100vw', height: '100vh', display: 'grid' }}>
+      <img src="/static/images/logo.png" />
+      <h1 style={{ color: '#F5C518', marginTop: 30, fontSize: 25 }}>
+        Loading.. Please wait.
+      </h1>
+    </div>
   );
 };
 
 export default Loading;
-
-const StyledLoading = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-`;
-
-const Text = styled.h1`
-  text-align: center;
-  margin-top: 100px;
-  color: ${color.yellow};
-  @media ${device.phone} {
-    font-size: 25px;
-  }
-`;
