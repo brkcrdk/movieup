@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import Container from '~/components/container';
 import Selectbox from '~/components/selectbox';
@@ -20,6 +21,21 @@ const SearchWFilter = ({ homepage }) => {
   const [year, setYear] = useState();
   const [type, setType] = useState();
   const [name, setName] = useState('');
+
+  const { events } = useRouter();
+
+  const [searchText, setSearchText] = useState('Search');
+
+  useEffect(() => {
+    const start = () => setSearchText('Searching');
+    const done = () => setSearchText('Search');
+    events.on('routeChangeStart', start);
+    events.on('routeChangeComplete', done);
+    return () => {
+      events.off('routeChangeStart', start);
+      events.off('routeChangeComplete', done);
+    };
+  }, [events]);
 
   const handleYear = (e) => {
     // NOTE: React select' in clearable özelliği ile seçilmiş olan option kaldırılırsa
@@ -57,7 +73,7 @@ const SearchWFilter = ({ homepage }) => {
           }}
         >
           <SearchBtn disabled={!name}>
-            Search
+            {searchText}
             <i className="icon-arrow-right" />
           </SearchBtn>
         </Link>
