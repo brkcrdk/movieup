@@ -16,7 +16,4 @@ const StyledContainer = styled.section`
   @media ${device.desktop} {
     padding: 20px;
   }
-  @media ${device.phone} {
-    padding: 5px;
-  }
 `;

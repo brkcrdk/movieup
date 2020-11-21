@@ -1,29 +1,15 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
 import { color, device } from '~/theme';
 
 const Paginate = ({ pageCount, pageChange }) => {
-  const [width, setWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.addEventListener('resize', handleResize);
-    };
-  }, [width]);
-
-  const displayed = width > 768 ? 2 : width > 601 ? 1 : 0;
-
   return (
     <StyledPaginate>
       <ReactPaginate
         onPageChange={pageChange}
         pageCount={pageCount}
-        pageRangeDisplayed={displayed}
-        marginPagesDisplayed={displayed}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
       />
     </StyledPaginate>
   );
@@ -39,6 +25,7 @@ const StyledPaginate = styled.div`
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding-inline-start: 0;
     li {
@@ -48,14 +35,22 @@ const StyledPaginate = styled.div`
       color: ${color.yellow};
       margin: 0 5px;
       transition: all 0.3s ease-in-out;
+      @media ${device.tablet} {
+        /* Paginate mobilede responsive problemi yapıyor 
+        bu nedenle sadece previous, next ve selected butonlarını sadece
+        belirlir bir çözünürlüğün üzerinde gösteriyorum*/
+        display: none;
+      }
       &.previous,
       &.next {
         margin: 0 30px;
+        display: block;
         @media ${device.mini} {
           margin: 0 auto;
         }
       }
       &.selected {
+        display: block;
         background: ${color.yellow};
         color: #fff;
       }
