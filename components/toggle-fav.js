@@ -33,7 +33,7 @@ const StyledToggleFav = styled.button`
   display: flex;
   align-items: center;
   font-size: 16px;
-
+  justify-content: center;
   i {
     font-size: 30px;
     margin-right: 8px;
