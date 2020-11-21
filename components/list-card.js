@@ -1,24 +1,32 @@
 import styled from 'styled-components';
 import Rating from '~/components/rating';
 import Body from '~/components/body';
-const ListCard = ({ poster, title, year }) => {
+import Link from 'next/link';
+
+const ListCard = ({ poster, title, year, imdbID = '' }) => {
   // TODO: Route to detail link
   return (
-    <StyledListCard>
-      <CardImage
-        src={poster === 'N/A' ? '/static/images/placeholder.png' : poster}
-      />
-      <Content>
-        <Rating />
-        <Body clampBody={4} title={title} year={year} />
-      </Content>
-    </StyledListCard>
+    <Link href={`/movies/${imdbID}`}>
+      <a>
+        <StyledListCard>
+          <CardImage
+            src={poster === 'N/A' ? '/static/images/placeholder.png' : poster}
+          />
+          <Content>
+            <Rating />
+            <Body clampBody={4} title={title} year={year} />
+          </Content>
+        </StyledListCard>
+      </a>
+    </Link>
   );
 };
 
 export default ListCard;
 
-const StyledListCard = styled.article``;
+const StyledListCard = styled.article`
+  cursor: pointer;
+`;
 
 const CardImage = styled.img`
   object-fit: cover;

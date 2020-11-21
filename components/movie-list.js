@@ -23,13 +23,13 @@ const MovieList = ({ title = '', movies = {}, pageChange }) => {
         <Header>{title}</Header>
       )}
       <StyledMovieList>
-        {Search?.map(({ imdbId, Title, Year, Poster }, index) => (
+        {Search?.map(({ imdbID, Title, Year, Poster }, index) => (
           <ListCard
             key={index}
             title={Title}
             year={Year}
             poster={Poster}
-            imdbId={imdbId}
+            imdbID={imdbID}
           />
         ))}
       </StyledMovieList>
