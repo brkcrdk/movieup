@@ -4,7 +4,6 @@ import Body from '~/components/body';
 import Link from 'next/link';
 
 const ListCard = ({ poster, title, year, imdbID = '' }) => {
-  // TODO: Route to detail link
   return (
     <Link href={`/movies/${imdbID}`}>
       <a>
