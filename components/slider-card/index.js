@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
 import Top from './top';
 import Bottom from './bottom';
 import Body from '~/components/body';
+
 import { device } from '~/theme';
 
 const SliderCard = () => {

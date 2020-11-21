@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import styled from 'styled-components';
+
 import { color, device, clampText } from '~/theme';
 
 // NOTE: Test etmek amaçlı var

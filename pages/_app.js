@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 import { useStore } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { wrapper } from '~/store';
+
 import Loading from '~/components/loading';
 
 const MyApp = ({ Component, pageProps }) => {

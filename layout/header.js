@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import Container from '~/components/container';
 import Desktop from './desktop';
 import Mobile from './mobile';
@@ -6,6 +7,7 @@ import Hamburger from './hamburger';
 import Logo from './logo';
 
 import { device } from '~/theme';
+
 const Header = () => {
   return (
     <StyledHeader>

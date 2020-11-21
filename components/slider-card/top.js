@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import GenrePill from '~/components/genre-pill';
 import Rating from '~/components/rating';
+
 import { device } from '~/theme';
 
 const Top = () => {

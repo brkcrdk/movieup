@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Container from '~/components/container';
 
 import { color, device } from '~/theme';
+
 const Banner = () => {
   return (
     <StyledBanner>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+
 import { device } from '~/theme';
 
 const Logo = () => {

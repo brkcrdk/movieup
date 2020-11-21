@@ -29,7 +29,6 @@ const Slider = ({
       onSwiper={(swiper) => {
         handleSlider(swiper);
       }}
-      //To create interleave effect
       className={interleaveEffect && 'interleaveEffect'}
       onSetTransition={(swiper, speed) => {
         if (interleaveEffect) {

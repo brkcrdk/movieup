@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { color } from '~/theme';
-import { device } from '~/theme';
+
+import { color, device } from '~/theme';
 
 const SearchBox = ({ inHeader = false, onChange }) => {
   return (

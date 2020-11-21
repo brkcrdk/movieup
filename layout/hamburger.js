@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+
 import { useRedux } from '~/hooks';
+
 import { color, device } from '~/theme';
+
 const Hamburger = () => {
   const { handleSidebar, sidebar } = useRedux();
   return (
@@ -42,8 +45,6 @@ const StyledHamburger = styled.button`
     &:nth-child(1) {
       top: 0;
       transform: ${(p) => p.isActive && 'rotate(45deg) translateX(-5px)'};
-
-      /* border: 1px solid red; */
     }
     &:nth-child(2) {
       top: 8px;

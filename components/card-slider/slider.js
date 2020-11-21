@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+
 import Swiper from '~/components/swiper';
 import SliderCard from '~/components/slider-card/index';
 
@@ -77,21 +78,11 @@ const Shadow = styled.div`
 
 const ShadowLeft = styled(Shadow)`
   left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.9) 20%,
-    rgba(255, 255, 255, 0.7) 50%,
-    transparent 100%
-  );
+  background: ${color.swiperLeftShadow};
 `;
 const ShadowRight = styled(Shadow)`
   right: 0;
-  background: linear-gradient(
-    to right,
-    transparent 5%,
-    rgba(255, 255, 255, 0.7) 50%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
+  background: ${color.swiperRightShadow};
 `;
 
 const Dots = styled.div`

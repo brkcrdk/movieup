@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
+
 import Navigation from './navigation';
+
 import { color, device } from '~/theme';
 import { useRedux } from '~/hooks';
 

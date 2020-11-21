@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Container from '~/components/container';
 import Selectbox from '~/components/selectbox';
 import SearchBox from '~/components/search-box';
+
 import { color, device } from '~/theme';
 
 const types = ['movie', 'series', 'episode'].map((type) => ({

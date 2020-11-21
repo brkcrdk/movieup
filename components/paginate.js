@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
+
 import { color, device } from '~/theme';
 
 const Paginate = ({ pageCount, pageChange }) => {

@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+
 import Container from '~/components/container';
 import Rating from '~/components/rating';
 import ToggleFav from '~/components/toggle-fav';
 import Body from '~/components/body';
 import GenrePill from '~/components/genre-pill';
+
 import { device } from '~/theme';
+
 const DetailCard = ({ data }) => {
   const { Poster, imdbRating, Year, Title, Plot, Genre } = data;
   return (
