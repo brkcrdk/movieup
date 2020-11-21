@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import AddToFav from '~/components/add-to-fav';
+import ToggleFav from '~/components/toggle-fav';
 import { color, device } from '~/theme';
 
 const Bottom = () => {
   return (
     <StyledBottom>
-      <AddToFav />
+      <ToggleFav />
       <Link href="/">
         <a>View Details</a>
       </Link>

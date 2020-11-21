@@ -5,18 +5,26 @@ const useRedux = () => {
   const dispatch = useDispatch();
   const sidebar = useSelector((s) => s.sidebar);
   const favs = useSelector((s) => s.favs);
-  const handleAddFav = (favItem) => {
-    return dispatch(addFav(favItem));
+
+  const isFav = (id) => {
+    return favs.some((item) => {
+      return item.imdbID === id;
+    });
   };
 
-  const handleRemoveFav = (favId) => {
-    return dispatch(removeFav(favId));
+  const handleFav = (favItem) => {
+    if (isFav(favItem.imdbID)) {
+      return dispatch(removeFav(favItem.imdbID));
+    } else {
+      return dispatch(addFav(favItem));
+    }
   };
+
   const handleSidebar = (option) => {
     return dispatch(toggleSidebar(option));
   };
 
-  return { sidebar, favs, handleAddFav, handleRemoveFav, handleSidebar };
+  return { sidebar, favs, isFav, handleFav, handleSidebar };
 };
 
 export default useRedux;
