@@ -8,8 +8,6 @@ import MovieList from '~/components/movie-list';
 const Movies = ({ data }) => {
   const { query, push } = useRouter();
 
-  console.log(data);
-
   const handlePagination = (e) => {
     push({
       pathname: '/results',

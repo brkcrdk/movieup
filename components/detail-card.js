@@ -6,7 +6,6 @@ import Body from '~/components/body';
 import GenrePill from '~/components/genre-pill';
 import { device } from '~/theme';
 const DetailCard = ({ data }) => {
-  console.log(data);
   const { Poster, imdbRating, Year, Title, Plot, Genre } = data;
   return (
     <Container>
