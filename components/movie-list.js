@@ -80,4 +80,7 @@ const ErrorText = styled.h1`
   text-align: center;
   margin-top: 100px;
   color: ${color.yellow};
+  @media ${device.phone} {
+    font-size: 25px;
+  }
 `;
