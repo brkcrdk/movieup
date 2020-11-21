@@ -13,7 +13,9 @@ const ToggleFav = ({ movie }) => {
       isFav={movie && isFav(movie.imdbID)}
     >
       <i className="icon-heart" />
-      Add to favourites
+      {movie && isFav(movie.imdbID)
+        ? 'Added to favourites'
+        : 'Add to favourites'}
     </StyledToggleFav>
   );
 };
