@@ -8,7 +8,7 @@ import { device, color } from '~/theme';
 
 const MovieList = ({ title = '', error, totalResults, movies, pageChange }) => {
   if (error) {
-    return <ErrorText>{Error}</ErrorText>;
+    return <ErrorText>{error}</ErrorText>;
   }
 
   return (
