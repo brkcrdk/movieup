@@ -7,15 +7,18 @@ import { wrapper } from '~/store';
 
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore((state) => state);
-  const router = useRouter();
+  const { events } = useRouter();
   useEffect(() => {
-    router.events.on('routeChangeStart', () => {
-      NProgress.start();
-    });
-    router.events.on('routeChangeComplete', () => {
-      NProgress.done();
-    });
-  }, [router.events]);
+    const start = () => NProgress.start();
+    const done = () => NProgress.done();
+    events.on('routeChangeStart', start);
+    events.on('routeChangeComplete', done);
+    return () => {
+      events.off('routeChangeStart', start);
+      events.off('routeChangeComplete', done);
+    };
+  }, [events]);
+
   return (
     <PersistGate persistor={store.__persistor} loading={<p>Loading..</p>}>
       <Component {...pageProps} />
