@@ -3,32 +3,27 @@ import Container from '~/components/container';
 import Rating from '~/components/rating';
 import AddToFav from '~/components/add-to-fav';
 import Body from '~/components/body';
-import Genre from '~/components/genre';
+import GenrePill from '~/components/genre-pill';
 import { device } from '~/theme';
-const DetailCard = () => {
+const DetailCard = ({ data }) => {
+  console.log(data);
+  const { Poster, imdbRating, Year, Title, Plot, Genre } = data;
   return (
     <Container>
       <StyledDetailCard>
-        <img src="/static/images/placeholder.png" />
+        <img
+          src={Poster !== 'N/A' ? Poster : '/static/images/placeholder.png'}
+        />
         <Content>
           <Header>
-            <Rating />
+            <Rating rating={imdbRating} />
             <AddToFav />
           </Header>
-          <Body clampBody={6} />
+          <Body clampBody={6} year={Year} title={Title} body={Plot} />
           <Genres>
-            <Genre genre="Action" />
-            <Genre genre="Biography" />
-            <Genre genre="Action" />
-            <Genre genre="Biography" />
-            <Genre genre="Action" />
-            <Genre genre="Biography" />
-            <Genre genre="Action" />
-            <Genre genre="Biography" />
-            <Genre genre="Biography" />
-            <Genre genre="Biography" />
-            <Genre genre="Biography" />
-            <Genre genre="Biography" />
+            {Genre.split(',').map((genre) => (
+              <GenrePill genre={genre} key={genre} />
+            ))}
           </Genres>
         </Content>
       </StyledDetailCard>

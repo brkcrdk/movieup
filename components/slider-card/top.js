@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Genre from '~/components/genre';
+import GenrePill from '~/components/genre-pill';
 import Rating from '~/components/rating';
 import { device } from '~/theme';
 
@@ -9,8 +9,8 @@ const Top = () => {
     <StyledTop>
       <Rating />
       <Genres>
-        <Genre genre="Action" />
-        <Genre genre="Biography" />
+        <GenrePill genre="Action" />
+        <GenrePill genre="Biography" />
       </Genres>
     </StyledTop>
   );

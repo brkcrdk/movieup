@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const Rating = () => {
+const Rating = ({ rating = '8.8' }) => {
   return (
     <StyledRating className="rating">
       <img src="/static/images/imdb.png" />
-      <span>8.8</span>
+      <span>{rating}</span>
     </StyledRating>
   );
 };

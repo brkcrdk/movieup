@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { color } from '~/theme';
 
-const Genre = ({ genre }) => {
+const GenrePill = ({ genre = 'Action' }) => {
   return <StyledGenre className="genre">{genre}</StyledGenre>;
 };
 
-export default Genre;
+export default GenrePill;
 
 const StyledGenre = styled.span`
   color: #000;
