@@ -33,7 +33,7 @@ const makeStore = ({ isServer }) => {
   } else {
     const persistConfig = {
       key: 'sidebar',
-      blacklist: ['sidebar', 'favs'],
+      blacklist: ['sidebar'],
       storage,
     };
 
