@@ -1,20 +1,33 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import { color, device } from '~/theme';
+import { useRedux } from '~/hooks';
 
 const Navigation = () => {
-  const { route } = useRouter();
+  const { route, push } = useRouter();
+  const { handleSidebar } = useRedux();
+
   const paths = [
     { href: '/', title: 'Home' },
     { href: '/favourite', title: 'Favourite' },
   ];
+
   return (
     <StyledNavigation>
       {paths.map(({ href, title }) => (
-        <Link key={title} href={href}>
-          <a className={route === href ? 'active' : ''}>{title}</a>
-        </Link>
+        <a
+          key={title}
+          className={route === href ? 'active' : ''}
+          onClick={() => {
+            handleSidebar();
+            setTimeout(() => {
+              push(href);
+            }, 300);
+          }}
+        >
+          {title}
+        </a>
       ))}
     </StyledNavigation>
   );
