@@ -23,7 +23,7 @@ const Navigation = () => {
             handleSidebar();
             setTimeout(() => {
               push(href);
-            }, 300);
+            }, 500);
           }}
         >
           {title}

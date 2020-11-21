@@ -7,6 +7,7 @@ const head = () => {
       <link rel="stylesheet" href="/static/icomoon/style.css" />
       <link rel="stylesheet" href="/static/styles/swiper/swiper.css" />
       <link rel="stylesheet" href="/static/styles/swiper/swiper.min.css" />
+      <link rel="stylesheet" href="/static/styles/nprogress.css" />
     </Head>
   );
 };
