@@ -7,6 +7,7 @@ import MovieList from '~/components/movie-list';
 
 const Movies = ({ data }) => {
   const { query, push } = useRouter();
+  const { Error, Search, totalResults } = data;
 
   const handlePagination = (e) => {
     push({
@@ -24,7 +25,9 @@ const Movies = ({ data }) => {
       <SearchWFilter />
       <MovieList
         title={query.name}
-        movies={data}
+        movies={Search}
+        error={Error}
+        totalResults={totalResults}
         pageChange={handlePagination}
       />
     </Layout>

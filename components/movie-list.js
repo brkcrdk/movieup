@@ -6,16 +6,14 @@ import Paginate from '~/components/paginate';
 
 import { device, color } from '~/theme';
 
-const MovieList = ({ title = '', movies = {}, pageChange }) => {
-  const { Search, Error, totalResults } = movies;
-
-  if (Error) {
-    return <ErrorText>{Error}</ErrorText>;
+const MovieList = ({ title = '', error, totalResults, movies, pageChange }) => {
+  if (error) {
+    return <ErrorText>{error}</ErrorText>;
   }
 
   return (
     <Container>
-      {Search ? (
+      {movies ? (
         <Header>
           Search result <span>{title}</span>
         </Header>
@@ -23,7 +21,7 @@ const MovieList = ({ title = '', movies = {}, pageChange }) => {
         <Header>{title}</Header>
       )}
       <StyledMovieList>
-        {Search?.map(({ imdbID, Title, Year, Poster }, index) => (
+        {movies?.map(({ imdbID, Title, Year, Poster }, index) => (
           <ListCard
             key={index}
             title={Title}
