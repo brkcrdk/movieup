@@ -8,7 +8,7 @@ import { device, color } from '~/theme';
 
 const MovieList = ({ title = '', error, totalResults, movies, pageChange }) => {
   if (error) {
-    return <ErrorText>{error}</ErrorText>;
+    return <ErrorText>{Error}</ErrorText>;
   }
 
   return (
@@ -53,8 +53,6 @@ const StyledMovieList = styled.section`
   }
   @media ${device.phone} {
     grid-gap: 25px 12.5px;
-  }
-  @media ${device.mini} {
     grid-template-columns: 1fr;
   }
 `;
