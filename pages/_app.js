@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 import { useStore } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { wrapper } from '~/store';
+import Loading from '~/components/loading';
 
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore((state) => state);
@@ -20,7 +21,7 @@ const MyApp = ({ Component, pageProps }) => {
   }, [events]);
 
   return (
-    <PersistGate persistor={store.__persistor} loading={<p>Loading..</p>}>
+    <PersistGate persistor={store.__persistor} loading={<Loading />}>
       <Component {...pageProps} />
     </PersistGate>
   );
