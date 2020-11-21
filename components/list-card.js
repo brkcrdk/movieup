@@ -5,7 +5,9 @@ const ListCard = ({ poster, title, year }) => {
   // TODO: Route to detail link
   return (
     <StyledListCard>
-      <CardImage src={poster} />
+      <CardImage
+        src={poster === 'N/A' ? '/static/images/placeholder.png' : poster}
+      />
       <Content>
         <Rating />
         <Body clampBody={4} title={title} year={year} />
